@@ -30,7 +30,7 @@ public class UserMealWithExcess {
     public static int addCaloriesPerDay(LocalDate crDate, int calories){ //return new value of calories per day
 
         if (totalCaloriesPerDay.containsKey(crDate)){
-            totalCaloriesPerDay.put(crDate, (totalCaloriesPerDay.get(crDate)<0)?
+            totalCaloriesPerDay.put(crDate, (totalCaloriesPerDay.get(crDate) < 0)?
                     (totalCaloriesPerDay.get(crDate)-calories):(totalCaloriesPerDay.get(crDate)+calories));
         } else {
             totalCaloriesPerDay.put(crDate, calories);
@@ -39,7 +39,7 @@ public class UserMealWithExcess {
     }
 
     public static void setCaloriesIsExceeded(LocalDate crDate){
-        totalCaloriesPerDay.put(crDate, (totalCaloriesPerDay.get(crDate)<0)?
+        totalCaloriesPerDay.put(crDate, (totalCaloriesPerDay.get(crDate) < 0)?
                 totalCaloriesPerDay.get(crDate): -totalCaloriesPerDay.get(crDate));
     }
 

@@ -36,13 +36,13 @@ public class UserMealsUtil {
 
         for (UserMeal meal : meals) {
 
-            if (UserMealWithExcess.addCaloriesPerDay(meal.getDateTime().toLocalDate(), meal.getCalories())>caloriesPerDay){
+            if (UserMealWithExcess.addCaloriesPerDay(meal.getDateTime().toLocalDate(), meal.getCalories()) > caloriesPerDay){
                 UserMealWithExcess.setCaloriesIsExceeded(meal.getDateTime().toLocalDate());
             }
 
             if (TimeUtil.isBetweenInclusive(meal.getDateTime().toLocalTime(), startTime, endTime)) {
                 mealsWithExcess.add(new UserMealWithExcess(meal.getDateTime(), meal.getDescription()
-                        , meal.getCalories(), UserMealWithExcess.getCaloriesPerDay((meal.getDateTime().toLocalDate()))<0));
+                        , meal.getCalories(), UserMealWithExcess.getCaloriesPerDay((meal.getDateTime().toLocalDate())) < 0));
             }
         }
         return mealsWithExcess;
