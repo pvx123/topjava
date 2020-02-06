@@ -20,6 +20,10 @@ public class UserMeal {
         return dateTime;
     }
 
+    public LocalDate getDate() {
+        return dateTime.toLocalDate();
+    }
+
     public String getDateToString() {
         return dateTime.toLocalDate().toString();
     }
